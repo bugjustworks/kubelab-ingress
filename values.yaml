@@ -1,0 +1,14 @@
+haproxy-ingress:
+  controller:
+    service:
+      type: "NodePort"
+      httpPorts:
+        - port: 80
+          targetPort: http
+          nodePort: 30080
+      httpsPorts:
+        - port: 443
+          targetPort: https
+          nodePort: 30443
+    extraArgs:
+      watch-ingress-without-class: "true"
