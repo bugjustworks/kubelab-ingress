@@ -12,3 +12,5 @@ haproxy-ingress:
           nodePort: 30443
     extraArgs:
       watch-ingress-without-class: "true"
+    podAnnotations:
+      linkerd.io/inject: ingress
