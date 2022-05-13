@@ -10,6 +10,14 @@ haproxy-ingress:
         - port: 443
           targetPort: https
           nodePort: 30443
+    stats:
+      enabled: true
+    metrics:
+      enabled: true
+    serviceMonitor:
+      enabled: true
+      labels:
+        monitorGroup: default         
     extraArgs:
       watch-ingress-without-class: "true"
     podAnnotations:
